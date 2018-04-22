@@ -1,6 +1,6 @@
 # react-chrome-extension
 This simple chrome extension written using React.
-Also **gulp** and **webpack** also helps to build final folder of extension 
+Also **gulp** and **webpack** helps to build final folder of extension 
 
 # What extension supposed to do:
 
