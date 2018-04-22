@@ -6,6 +6,7 @@
     color: #3c763d;
     background-color: #dff0d8;
 }
+
 .close {
   position:absolute;
   top:0;
@@ -15,6 +16,7 @@
   cursor: pointer;
   color:black;
 }
+
 .close:hover{
   background-color: rgb(238, 23, 23);
   color: white;
