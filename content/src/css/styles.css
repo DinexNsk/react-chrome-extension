@@ -1,4 +1,4 @@
-.message {
+.injectedMessage {
     text-align:center;
     padding: 15px 0px;
     border: 1px solid #d6e9c6;
@@ -7,7 +7,7 @@
     background-color: #dff0d8;
 }
 
-.close {
+.closeMessage {
   position:absolute;
   top:0;
   right:0; 
@@ -17,7 +17,7 @@
   color:black;
 }
 
-.close:hover{
+.closeMessage:hover{
   background-color: rgb(238, 23, 23);
   color: white;
 }

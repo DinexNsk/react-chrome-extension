@@ -25,8 +25,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="message">{ this.props.message }
-        <strong className="close" onClick={this.remove}>x</strong>
+      <div className="injectedMessage">{ this.props.message }
+        <strong className="closeMessage" onClick={this.remove}>x</strong>
       </div>
     );
   }
