@@ -14,6 +14,7 @@ EventPage.prototype.getData = function() {
 }
 
 EventPage.prototype.startListener = function () {
+  this.getData();
   chrome.tabs.onUpdated.addListener(
     (tabId, changeInfo, tab) => {
 
@@ -22,12 +23,18 @@ EventPage.prototype.startListener = function () {
 
         this.count++;
         let message = this.listOfSites[this.foundIndex].message;
-
+  
         chrome.tabs.sendMessage(tab.id, {messageText: message}, this.getResponse);
         chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-              this.count = request.messageText;
-              sendResponse({"messageText": `Current count is ${this.count}`});
+          this.count = request.messageText;
+          sendResponse({"messageText": `Current count is ${this.count}`});
         });
+      }
+
+      if(changeInfo.status === "complete" &&
+        tab.url.match(/((google.(com|ru))|(bing.com))\/search/gi)!== null){
+  
+        chrome.tabs.sendMessage(tab.id, {messageObject: this.listOfSites}, this.getResponse);
       }
     }
   );
@@ -53,7 +60,6 @@ EventPage.prototype.search = function(urlFull, arr){
 
 let event = new EventPage();
 
-event.getData();
 event.startListener();
   
    
