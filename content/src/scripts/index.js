@@ -1,5 +1,3 @@
-/* eslint-disable-rule no-undef */
- /*global chrome*/
 import React from 'react';
 import {render} from 'react-dom';
 
@@ -19,5 +17,6 @@ function createElement(message){
     anchor.id = 'rcr-anchor';
     document.body.style.transform = "translateY(0)"
     document.documentElement.insertBefore(anchor, document.documentElement.lastChild);
+
     render(<App message={message}/>, anchor);
   }

@@ -1,5 +1,3 @@
-/* eslint-disable-rule no-undef */
- /*global chrome*/
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../../../css/index.css'
