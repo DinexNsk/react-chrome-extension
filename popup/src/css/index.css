@@ -1,0 +1,25 @@
+.exists{
+    align-items: center;
+    width: 200px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 5px;
+}
+.exists div{
+    padding: 5px;
+}
+.exists a{
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid #3c763d;
+    border-radius: 10px;
+    color: black;
+    padding: 2px 5px;
+}
+.exists a:hover{
+    background-color: #fff;
+}
