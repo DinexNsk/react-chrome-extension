@@ -1,5 +1,3 @@
-/* eslint-disable-rule no-undef */
- /*global chrome*/
 import axios from 'axios';
 
 class EventPage {
@@ -18,14 +16,17 @@ EventPage.prototype.getData = function() {
 EventPage.prototype.startListener = function () {
   chrome.tabs.onUpdated.addListener(
     (tabId, changeInfo, tab) => {
-      if((this.count < 3) && changeInfo.status === "complete" && this.search(tab.url, this.listOfSites)){
+
+      if((this.count < 3) && changeInfo.status === "complete" &&
+        this.search(tab.url, this.listOfSites)){
+
         this.count++;
-        console.log(this.listOfSites[0])
         let message = this.listOfSites[this.foundIndex].message;
+
         chrome.tabs.sendMessage(tab.id, {messageText: message}, this.getResponse);
         chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
               this.count = request.messageText;
-              sendResponse({"messageText": "answerToScript"});
+              sendResponse({"messageText": `Current count is ${this.count}`});
         });
       }
     }
