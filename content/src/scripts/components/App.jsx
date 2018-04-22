@@ -9,7 +9,7 @@ class App extends Component {
   }
 
   remove (){
-    let item = document.getElementById('rcr-anchor');
+    let item = document.getElementById('inject-container');
 
     document.documentElement.removeChild(item);
     chrome.runtime.sendMessage({messageText: 3}, this.getResponse);
